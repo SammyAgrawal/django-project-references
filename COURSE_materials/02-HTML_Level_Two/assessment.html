@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chap 2</title>
+</head>
+<body>
+    <h1>Course Sign Up</h1>
+    <form action="form.html">
+        <p>** required</p>
+
+        <label for="fn">First Name</label>
+        <input type="text" placeholder="John" id="fn" required>
+        <label for="ln">Last Name:</label>
+        <input type="text" placeholder="Smith" id="ln" required>
+        <br> <br>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="name@domain.com" id="email" required>
+        <label for="password">Password: </label>
+        <input type="password" id="password" required>
+
+        <p>Are you over 18?</p>
+        <label for="old">Yes</label>
+        <input id="old" type="radio" name="age" value="18+">
+        <label for="young"> No </label>
+        <input id="young" type="radio" name="age" value="-18"> 
+        <br>
+
+        <p>What will you pay with</p>
+        <select name="Payment">
+            <option value="c"> Credit Card</option>
+            <option value="p"> Paypal </option>
+        </select>
+        <br>
+
+        <input type="submit" value="SUBMIT">
+    </form>
+
+</body>
+</html>

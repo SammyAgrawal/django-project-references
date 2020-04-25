@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+
+    {%block title%} Home {%endblock%}
+
+    {% block body_block %}
+
+    <a href="https://docs.djangoproject.com/en/3.0/howto/custom-template-tags/#howto-writing-custom-template-filters"> Custom filter tags docs </a>
+    <br> <br>
+    <h1>Welcome to Index! </h1>
+    <a href="{% url 'myapp:relative' %}"> Relative urls!</a>
+    <h3>String: {{string|upper }}</h1>
+    <h3>Number: {{ int|add:"5" }}</h3>
+    <h5>
+    {% for book in books %}
+        <p>{{ book.title }} ({{ book.author.name }}) </p>
+    {% endfor %}
+    </h5>
+    <h4> {{list|join:" *&* "}}</h4>
+    <h4>{{ list|slice:"0:4"}}</h4>
+
+    {% endblock %}
+</body>
+</html>

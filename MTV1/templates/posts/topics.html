@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics</title>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+</head>
+<body>
+    <h1>Topics</h1>
+    {%if topics %} 
+        {% for t in topics %}
+            <ul>
+                <a href="/topics/{{t.name}}"> {{t.name}}</a>
+            </ul>
+        {% endfor %}
+    {%else%}
+        <p>No topics</p>
+    {% endif %}
+</body>
+</html>

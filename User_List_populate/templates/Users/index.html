@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=p, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+</head>
+<body>
+    <h1>Register to site!</h1>
+    <form method="POST">
+        {%csrf_token%}
+    
+        {{modelform.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <p>go to /users to see our users!</p>
+</body>
+</html>
