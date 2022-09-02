@@ -1,0 +1,17 @@
+{
+	"folders": [
+        {
+            "path": ".."
+        },
+        {
+            "path": "../../Level5"
+        },
+        {
+            "path": "../../blog"
+        },
+        {
+            "path": "../../COURSE_materials/18-Django_Level_Five"
+        }
+    ],
+    "settings": {}
+}
