@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ image_form.as_p }}
+    
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>From Static </h3>
+
+    <img src="{% static 'images/local.png' %}" alt="from static" width=800>
+
+    <h3> All From Database </h3>
+    
+    {% for db_image in db_images %}
+
+        <a href="{{ db_image.picture.url }}" style="display: block;"> Look at {{db_image.name}} </a>
+
+        <img src= "{{ db_image.picture.url }}" alt="amazing!">
+
+        <br> <br> <br> <br> <br> <br> 
+
+    {% endfor %}
+
+</body>
+</html>
