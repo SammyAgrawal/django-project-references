@@ -1,0 +1,35 @@
+{% extends 'topics/base.html' %}
+{% load static %}
+
+{% block title %} Topics {% endblock %}
+
+{% block body %}
+
+    <h1 class='rojo'> Articles </h1>
+
+    <ul>
+    {% for post in posts %}
+        <li>
+            <p> {{post.title}}</p>
+            <p> {{post.body}} </p>
+            {% if post.image %}
+                <img src="{{post.image.url}}" alt="">
+            {% endif %}
+        </li>
+    {% endfor %}
+
+    </ul>
+
+
+    <form method='POST' enctype="multipart/form-data">
+        {%csrf_token%}
+        {{ postform.as_p }}
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <img src="{%static 'images/blog.jpeg'%}" alt="">
+
+
+
+{% endblock %}
