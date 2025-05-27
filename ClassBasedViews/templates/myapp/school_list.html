@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    
+    <h1> Schools </h1>
+
+    <ul>
+        {% for school in schools %}
+            <li> 
+                <a href="{% url 'detail-view' pk=school.pk %}"> {{school.name }} hh </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
