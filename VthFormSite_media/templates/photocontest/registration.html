@@ -1,0 +1,24 @@
+{% extends "photocontest/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="jumbotron">
+    {% if registered %}
+        <h1> Thanks for registering! </h1>
+        <h3> You're all set! </h3>
+    {% else %}
+        <h1> Register Here! </h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{ ProfileForm.as_p }}
+            <input type="submit" value="Login">
+        </form>
+    {% endif %}
+
+</div>
+
+
+
+
+{% endblock %}
